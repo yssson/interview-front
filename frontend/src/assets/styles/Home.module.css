@@ -1,0 +1,43 @@
+.flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    gap: 0.5em;
+    transition: gap 1s ease-in-out, letter-spacing 1s ease-in-out;
+}
+
+/* 대문자 + 숨겨진 글자 그룹 */
+.letter {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    white-space: nowrap;
+}
+
+/* 숨겨진 글자 (초기 상태) */
+.hiddenText {
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:
+            max-width 1s ease-in-out,
+            opacity 1s ease-in-out,
+            transform 1s ease-in-out;
+}
+
+/* 호버 시 간격 확장 */
+.flexContainer.hovered {
+    gap: 3em; /* 더 자연스럽게 확장 */
+    min-width: max-content; /* 확장된 글자가 잘리지 않도록 설정 */
+}
+
+/* 호버 시 숨겨진 글자 활성화 */
+.flexContainer.hovered .hiddenText {
+    max-width: 500px; /* 더 넉넉하게 확보 */
+    opacity: 1;
+    transform: scaleX(1);
+}

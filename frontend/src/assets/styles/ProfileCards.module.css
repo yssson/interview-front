@@ -1,0 +1,30 @@
+.container {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+.swiperWrapper {
+    display: inline-flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+.swiperSlideCustom {
+    flex-shrink: 0;
+    width: auto;
+    max-width: 400px;
+    margin-right: 30px;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+

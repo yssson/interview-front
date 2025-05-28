@@ -1,0 +1,33 @@
+/* 폰트 가져오기 */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Flex&family=Roboto&family=Silkscreen&display=swap'); /* CSS: tailwind: flex, font-size, font-style, position(fixed), padding, hover */
+
+/* tailwind : flex, 폰트 스타일 및 크기 fixed, 패딩, hover효과 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Freesentation-1Thin';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-1Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+html, body, #root, main{
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
