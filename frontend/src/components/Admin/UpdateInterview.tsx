@@ -1,8 +1,8 @@
 // 질문 수정, 삭제, 추가
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import {deleteQuestion, editQuestion, fetchInterview, addNewQuestion} from "@api/fetchInterviews";
-import {Interview} from "../../types/types";
+import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {addNewQuestion, deleteQuestion, editQuestion, fetchInterview} from "@api/fetchInterviews";
+import {Interview} from "@interfaces/types";
 
 export const UpdateInterview = () => {
     const { id } = useParams<{ id: string }>();
@@ -16,6 +16,7 @@ export const UpdateInterview = () => {
 
     useEffect(() => {
         const loadInterviewData = async () => {
+            if (!id) return;
             const interviewData = await fetchInterview(id);
             setInterview(interviewData); // 인터뷰 데이터를 상태에 저장
         };
@@ -92,9 +93,8 @@ export const UpdateInterview = () => {
             alert("질문과 답변을 모두 입력해주세요.");
             return;
         }
-
-        const profileId = id;
-            const res = await addNewQuestion(profileId, newQuestion, newAnswer);
+        if (!id) return;
+        const res = await addNewQuestion(id, newQuestion, newAnswer);
             if(res) {
                 setNewQuestion('');
                 setNewAnswer('');

@@ -1,7 +1,6 @@
-import {GuestBook, CreateGuestBook} from "@types/types"
+import {GuestBook, CreateGuestBook} from "@interfaces/types"
 import { useState, useEffect } from "react";
 import {createGuestBook, fetchGuestBookList, deleteGuestBook} from "../api/fetchGuestBook";
-import {toast} from "react-toastify";
 
 
 export const Guestbook = () => {

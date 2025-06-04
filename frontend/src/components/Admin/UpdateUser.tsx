@@ -1,5 +1,5 @@
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
-import {Interviewee} from "../../types/types";
+import {Interviewee} from "@interfaces/types";
 import {useState} from "react";
 
 

@@ -40,7 +40,8 @@ export interface Interview {
 }
 
 //방명록 불러올 때(이름 대소문자
-interface GuestBook {
+export interface GuestBook {
+  createdAt: string;
   id: string; // DB에서 자동 생성된 ID
   name: string;
   message: string

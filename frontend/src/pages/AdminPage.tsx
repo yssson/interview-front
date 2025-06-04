@@ -1,5 +1,5 @@
-import Navbar_Admin_Top from "@components/Nav/Navbar_Admin_Top";
-import {Navbar_Admin_Aside} from "@components/Nav/Navbar_Admin_Aside";
+import NavbarAdminTop from "@components/Nav/NavbarAdminTop";
+import {NavbarAdminAside} from "@components/Nav/NavbarAdminAside";
 import {Outlet} from "react-router-dom";
 
 export const AdminPage = () => {
@@ -12,12 +12,12 @@ export const AdminPage = () => {
     return (
         <div className="flex flex-col h-screen">
             {/* 상단바 */}
-            <Navbar_Admin_Top />
+            <NavbarAdminTop />
 
             {/* 컨텐츠 영역 */}
             <div className="flex flex-1 pt-12">
                 {/* 사이드바 */}
-                <Navbar_Admin_Aside links={links} />
+                <NavbarAdminAside links={links} />
 
                 {/* 메인 콘텐츠 */}
                 <div className="flex-1">

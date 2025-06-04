@@ -1,4 +1,4 @@
-import {GuestBook, CreateGuestBook} from "@types/types"
+import {GuestBook, CreateGuestBook} from "@interfaces/types"
 import {toast} from "react-toastify";
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 const API_BASE_URL = `${apiUrl}/guest-book`;

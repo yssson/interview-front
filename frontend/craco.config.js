@@ -1,4 +1,5 @@
 const path = require('path');
+const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 
 module.exports = {
   webpack: {
@@ -7,7 +8,23 @@ module.exports = {
       '@api': path.resolve(__dirname, 'src/api'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@assets': path.resolve(__dirname, 'src/assets'),
-      '@types': path.resolve(__dirname, 'src/types'),
+      '@interfaces': path.resolve(__dirname, 'src/types'),
     },
-  }
+    configure: (webpackConfig) => {
+      webpackConfig.plugins = webpackConfig.plugins.filter(
+          (plugin) => !(plugin instanceof ForkTsCheckerWebpackPlugin)
+      );
+
+      webpackConfig.plugins.push(
+          new ForkTsCheckerWebpackPlugin({
+            async: true,
+            typescript: {
+              memoryLimit: 8192,
+            },
+          })
+      );
+
+      return webpackConfig;
+    },
+  },
 };

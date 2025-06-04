@@ -1,7 +1,6 @@
-import { Profile } from "../types/types";
+import { Profile } from "@interfaces/types";
 import {useEffect, useRef, useState} from "react";
 import { fetchProfiles } from "@api/fetchProfiles";
-import { Link} from "react-router-dom";
 import styles from "@assets/styles/ProfileCards.module.css";
 
 interface ProfileCardsProps {

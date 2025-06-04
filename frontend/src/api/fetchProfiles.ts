@@ -1,4 +1,4 @@
-import {Interviewee,ProfileInput} from "@types/types";
+import {Interviewee,ProfileInput} from "@interfaces/types";
 import {toast} from "react-toastify";
 import {fetchWithAuth} from "@api/fetchWithAuth";
 const apiUrl = process.env.REACT_APP_API_BASE_URL;

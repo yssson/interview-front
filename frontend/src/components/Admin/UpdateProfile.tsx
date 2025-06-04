@@ -1,8 +1,8 @@
 import {ProfileInput, Role} from "../../types/types";
 import { useEffect, useState } from "react";
-import {useNavigate, useOutletContext, useParams, useSearchParams} from "react-router-dom";
-import { ProfileForm } from "../ProfileForm";
-import {fetchProfile, createProfile, updateProfile, deleteProfile, fetchProfiles} from "../../api/fetchProfiles";
+import {useNavigate, useOutletContext, useParams} from "react-router-dom";
+import { ProfileForm } from "@components/ProfileForm";
+import {fetchProfile, createProfile, updateProfile, deleteProfile, fetchProfiles} from "@api/fetchProfiles";
 import {toast} from "react-toastify";
 
 export const UpdateProfile = () => {

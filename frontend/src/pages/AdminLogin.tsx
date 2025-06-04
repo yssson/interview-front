@@ -18,9 +18,13 @@ export const AdminLogin = () => {
             //성공
             navigate("/admin", { replace: true }); // /login을 히스토리에서 제거
         } catch (error) {
-            //실패
-            setError(error.message);
-            console.error("로그인 에러:", error);
+            if (error instanceof Error) {
+                setError(error.message);
+                console.error("로그인 에러:", error);
+            } else {
+                setError("알 수 없는 에러가 발생했습니다.");
+                console.error("Unknown error:", error);
+            }
         }
     };
 

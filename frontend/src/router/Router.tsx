@@ -1,6 +1,6 @@
 import {useRoutes} from "react-router-dom";
 import {Home} from "@pages/Home";
-import {Navbar_ProfileList} from "../components/Nav/Navbar_ProfileList";
+import {NavbarProfileList} from "@components/Nav/NavbarProfileList";
 import {InterviewPage} from "@pages/InterviewPage";
 import { UpdateProfile } from "@components/Admin/UpdateProfile";
 import { UpdateUser } from "@components/Admin/UpdateUser";
@@ -39,7 +39,7 @@ export const Router = () => {
                     children: [
                         {
                             path: 'interview', //http://localhost:3002/admin/interview
-                            element: <Navbar_ProfileList/>, //인터뷰 직원 리스트
+                            element: <NavbarProfileList/>, //인터뷰 직원 리스트
                             children: [
                                 {
                                     path: '/admin/interview/:id', //http://localhost:3002/admin/interview/id
@@ -49,7 +49,7 @@ export const Router = () => {
                         },
                         {
                             path:'profile', //http://localhost:3002/admin/profile
-                            element: <Navbar_ProfileList />,
+                            element: <NavbarProfileList />,
                             children: [
                                 {
                                     path: ':id', //http://localhost:3002/admin/profile/id

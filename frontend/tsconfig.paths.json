@@ -6,7 +6,7 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@assets/*": ["assets/*"],
-      "@types/*": ["types/*"],
+      "@interfaces/*": ["types/*"],
     }
   },
 }

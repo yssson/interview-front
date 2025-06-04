@@ -1,0 +1,37 @@
+import { useEffect, useState } from "react";
+import {Outlet, useLocation} from "react-router-dom";
+import { fetchProfiles } from "@api/fetchProfiles";
+import { NavbarAdminAside } from "@components/Nav/NavbarAdminAside";
+import { Interviewee } from "@interfaces/types";
+
+export const NavbarProfileList = () => {
+  const [profiles, setProfiles] = useState<Interviewee[]>([]);
+  const location = useLocation();
+  const type = location.pathname.split('/')[2]; // 'interview' 또는 'profile'
+
+  useEffect(() => {
+    const fetchAndSetProfiles = async () => {
+        const data: Interviewee[] = await fetchProfiles();
+        setProfiles(data);
+    };
+    fetchAndSetProfiles();
+  }, []);
+
+  // 프로필 리스트를 links로 변환
+  const links = profiles.map((p) => ({
+    path: `/admin/${type}/${p.id}`,
+    label: p.name
+  }));
+
+  return (
+      <div className="flex h-screen">
+        {/* ✅ 공통 컴포넌트 사용 */}
+        <NavbarAdminAside links={links} />
+
+        {/* 메인 콘텐츠 */}
+        <div className="flex-1">
+          <Outlet context={{ setProfiles }} />
+        </div>
+      </div>
+  );
+};

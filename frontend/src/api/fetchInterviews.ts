@@ -1,4 +1,4 @@
-import { Interview } from '@types/types';
+import { Interview } from '@interfaces/types';
 import {toast} from "react-toastify";
 import {fetchWithAuth} from "@api/fetchWithAuth";
 const apiUrl = process.env.REACT_APP_API_BASE_URL;

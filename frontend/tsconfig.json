@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -19,19 +20,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["node"],
-    "baseUrl": "src", // 보통 src 기준
-    "paths": {
-      "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@api/*" : ["api/*"],
-      "@assets/*" : ["assets/*"],
-      "@types/*" : ["types/*"],
-    }
+    "types": ["node"]
   },
-  "extends": "./tsconfig.paths.json",
   "include": [
-    "node_modules",
+    "src",
     "craco.config.js"
   ]
 }

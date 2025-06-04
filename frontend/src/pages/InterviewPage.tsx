@@ -1,9 +1,9 @@
-import { Interview } from "../types/types";
+import { Interview } from "@interfaces/types";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchInterview } from "@api/fetchInterviews";
 import { ProfileCards } from "@components/ProfileCards";
-import {Navbar} from "../components/Nav/Navbar";
+import {Navbar} from "@components/Nav/Navbar";
 
 //유튜브 변환 함수
 function convertYoutubeLinks(text: string): string {
@@ -23,17 +23,18 @@ export const InterviewPage = () => {
   const { id } = useParams(); // url의 id부분 꺼내옴
   const [interview, setInterview] = useState<Interview | null>(null); //인터뷰 저장
 
-  const getInterview = async () => {
-    if (!id) return;
-    try {
-      const data = await fetchInterview(id);
-      setInterview(data);
-    } catch (error) {
-      console.error("인터뷰 데이터를 불러오는 중 오류 발생:", error);
-    }
-  };
 
   useEffect(() => {
+    const getInterview = async () => {
+        if (!id) return;
+        try {
+            const data = await fetchInterview(id);
+            setInterview(data);
+        } catch (error) {
+            console.error("인터뷰 데이터를 불러오는 중 오류 발생:", error);
+        }
+    }
+
     getInterview();
   }, [id]);
 
@@ -67,7 +68,7 @@ export const InterviewPage = () => {
         </div>
         <div className="w-[calc(100vw-300px)] border-l-2 border-[#f9f9f9] mb-[60px] mt-[100px]">
           <h3 className="font-bold text-2xl mb-[30px] px-20">PMI의 다른 개발자 인터뷰를 확인하세요! </h3>
-        <ProfileCards path="/interview" theme="white" />
+        <ProfileCards path="/interview" theme="light" />
       </div>
       </div>
   );

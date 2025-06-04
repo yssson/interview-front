@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Role, ProfileInput } from "../types/types";
+import { Role, ProfileInput } from "@interfaces/types";
 
 interface ProfileFormProps {
   profile?: ProfileInput;
