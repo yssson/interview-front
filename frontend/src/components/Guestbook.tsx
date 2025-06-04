@@ -1,6 +1,6 @@
 import {GuestBook, CreateGuestBook} from "@interfaces/types"
 import { useState, useEffect } from "react";
-import {createGuestBook, fetchGuestBookList, deleteGuestBook} from "../api/fetchGuestBook";
+import {createGuestBook, fetchGuestBookList, deleteGuestBook} from "@api/fetchGuestBook";
 
 
 export const Guestbook = () => {

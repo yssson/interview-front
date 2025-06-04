@@ -1,7 +1,7 @@
 // 어드민 상단 바
 import logo from "@assets/img/logo.png";
 import {useNavigate} from "react-router-dom";
-import {logout} from "../../api/fetchUser";
+import {logout} from "@api/fetchUser";
 
 const Navbar_Admin_Top = () => {
     const navigate = useNavigate();

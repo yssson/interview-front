@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {Outlet, useLocation} from "react-router-dom";
 import { fetchProfiles } from "@api/fetchProfiles";
 import { Navbar_Admin_Aside } from "@components/Nav/Navbar_Admin_Aside";
-import { Interviewee } from "@types/types";
+import { Interviewee } from "@interfaces/types";
 
 export const Navbar_ProfileList = () => {
   const [profiles, setProfiles] = useState<Interviewee[]>([]);
